@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Video Page Redeux for Unit9 </title>
+    <link rel="stylesheet" href="css/video_landing_page.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // close the side nav and close button
+        $(".side_nav").slideToggle();
+        $(".close_btn").slideToggle();
+
+        // on menu click, open side nav and close button
+        $(".menu_btn").on("click", function(){
+          $(".menu_btn").slideToggle();
+          $(".side_nav").slideToggle();
+          $(".close_btn").slideToggle();
+          $(".close_btn").animate({ "left": "+=150px" }, "slow" );
+
+          // on close button, close the close btn and open menu btn
+          $(".close_btn").on("click", function(){
+            $(".close_btn").animate({ "right": "-=150px" }, "slow" );
+            $(".close_btn").slideToggle();
+            $(".side_nav").slideToggle();
+            $(".menu_btn").slideToggle();
+          })
+        })
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="vid_play">
+        <h1 id="title">UNIT9</h1>
+        <video autoplay loop>
+          <source src="files/Unit9-LandingPage-Video-Solo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="links">
+        <a href="#">FILMS</a>
+        <a href="#">DIGITAL</a>
+        <a href="#">GAMES</a>
+        <a href="#">VR</a>
+        <a href="#">EXPERIENTIAL</a>
+      </div>
+      <div class="btns">
+        <button class="menu_btn"></button>
+        <button class="close_btn"></button>
+      </div>
+
+      <nav class="side_nav">
+        <section class="search_items">
+          <img src="files/search_img.png" alt="search items">
+        </section>
+        <a href="#" class="link_decor">FILMS</a></br>
+        <a href="#" class="link_decor">DIGITAL</a>
+        <a href="#" class="link_decor">GAMES</a></br>
+        <a href="#" class="link_decor">VR</a>
+        <a href="#" class="link_decor">EXPERIENTIAL</a>
+        <a href="#" class="link_decor">PRESENTS</a>
+
+        <section class="nav_line">
+          <a href="video_demo.html" class="active">Home</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">Work</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">Directors</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">Reels</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">About</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">Jobs</a>
+        </section>
+
+        <section class="nav_line">
+          <a href="#">Contact</a>
+        </section>
+      </nav>
+    </div>
+  </body>
+</html>
